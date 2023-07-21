@@ -54,6 +54,19 @@ const copanyText3 = document.getElementById("copanyText3");
 const roleText3 = document.getElementById("roleText3");
 const jobDescription3 = document.getElementById("jobDescription3");
 
+const skill1Input = document.getElementById("skill1Input");
+const skill2Input = document.getElementById("skill2Input");
+const skill3Input = document.getElementById("skill3Input");
+const skill4Input = document.getElementById("skill4Input");
+const skill5Input = document.getElementById("skill5Input");
+const skill6Input = document.getElementById("skill6Input");
+const skill1 = document.getElementById("skill1");
+const skill2 = document.getElementById("skill2");
+const skill3 = document.getElementById("skill3");
+const skill4 = document.getElementById("skill4");
+const skill5 = document.getElementById("skill5");
+const skill6 = document.getElementById("skill6");
+
 // function to upload image
 
 fileInput.addEventListener("change", function () {
@@ -98,3 +111,10 @@ getInput(workFrom3Input, workFrom3);
 getInput(jobDescription3Input, jobDescription3);
 getInput(role3Input, roleText3);
 getInput(organisation3Input, copanyText3);
+
+getInput(skill1Input, skill1);
+getInput(skill2Input, skill2);
+getInput(skill3Input, skill3);
+getInput(skill4Input, skill4);
+getInput(skill5Input, skill5);
+getInput(skill6Input, skill6);
