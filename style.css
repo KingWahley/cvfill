@@ -1,0 +1,120 @@
+/* Reset some default styles */
+html,
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.cv {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 5px solid #4ea5d9; /* Cool blue color */
+  border-radius: 15px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture img {
+  width: 120px;
+  height: 120px;
+  border: 5px solid #4ea5d9; /* Cool blue color */
+  border-radius: 50%;
+  margin-right: 20px;
+  box-shadow: 0 0 10px rgba(78, 165, 217, 0.7); /* Light blue shadow */
+}
+
+.contact-info h1 {
+  font-size: 30px;
+  margin-bottom: 5px;
+  color: #4ea5d9; /* Cool blue color */
+}
+
+.contact-info p {
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-link {
+  display: inline-block;
+  margin-right: 10px;
+  color: #4ea5d9; /* Cool blue color */
+  text-decoration: none;
+}
+
+.social-link:hover {
+  color: #1f7fb7; /* Darker cool blue color on hover */
+}
+
+.about,
+.education,
+.experience,
+.skills {
+  margin-bottom: 30px;
+}
+
+.about p {
+  font-size: 18px;
+}
+
+.education h3,
+.experience h3,
+.skills h3 {
+  margin-bottom: 10px;
+  color: #4ea5d9; /* Cool blue color */
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  background-color: #f0f4f8; /* Light blue-gray background color */
+  border-radius: 5px;
+  height: 10px;
+  margin-bottom: 5px;
+}
+
+.progress {
+  background-color: #4ea5d9; /* Cool blue color */
+  border-radius: 5px;
+  height: 10px;
+}
+
+/* Glass design effect */
+.slide {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Semi-transparent white background */
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(78, 165, 217, 0.2); /* Light blue shadow */
+}
