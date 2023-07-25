@@ -2,31 +2,88 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <title>CV-Editor-test-version</title>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
   </head>
   <body>
-    <div class="flex flex-row w-full">
-      <div class="container mx-auto p-8">
-        <div class="flex bg-gray-200">
-          <div class="w-1/3 text-white bg-gray-900">
-            <div class="">
+    <div
+      class="fixed top-0 mb-4 flex flex-row justify-between px-4 py-4 shadow-md w-full bg-white z-50 bg-opacity-85"
+    >
+      <div class="flex flex-row justify-center z-60">
+        <div class="flex flex-row justify-center items-center mr-5">
+          <label for="color">Primary Color</label>
+          <input
+            id="colorInput"
+            class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+            type="color"
+          />
+        </div>
+        <div class="flex flex-row justify-center items-center mx-5">
+          <label for="color">Secondary Color 1 </label>
+          <input
+            class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+            id="colorInput2"
+            type="color"
+          />
+        </div>
+        <div class="flex flex-row justify-center items-center mx-5">
+          <label for="color">Secondary Color 2 </label>
+          <input
+            class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+            id="colorInput3"
+            type="color"
+          />
+        </div>
+        <div class="flex flex-row justify-center items-center mx-5">
+          <label for="color">Text Color 1 </label>
+          <input
+            class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+            id="colorInput4"
+            type="color"
+          />
+        </div>
+        <div class="flex flex-row justify-center items-center mx-5">
+          <label for="color">Text Color 2 </label>
+          <input
+            class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+            id="colorInput5"
+            type="color"
+          />
+        </div>
+      </div>
+      <div class="ml-15">
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+          onclick="handleSavePdfButtonClick(event)"
+        >
+          Save as pdf
+        </button>
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          onclick="captureAndDownload(event) "
+        >
+          Save as image
+        </button>
+      </div>
+    </div>
+    <div class="mt-20">
+      <p></p>
+    </div>
+    <div class="flex flex-row w-full bg-gray-900">
+      <div class="container mx-auto p-4">
+        <div id="designs" class="flex bg-gray-200">
+          <div id="colorBg1" class="w-1/3 text-white bg-gray-800">
+            <div id="lSide" class="">
               <div class="w-full">
-                <!-- <div class="w-full">
-                  <img
-                    id="uploaded-image"
-                    src="https://img.freepik.com/free-photo/portrait-attractive-thoughtful-girl-smiling-looking-left-white_1258-19127.jpg?w=2000"
-                    alt="Your image here"
-                    class="w-full h-full object-cover"
-                  />
-                </div> -->
                 <img
                   id="uploaded-image"
                   src="https://img.freepik.com/free-photo/portrait-attractive-thoughtful-girl-smiling-looking-left-white_1258-19127.jpg?w=2000"
@@ -36,52 +93,67 @@
               </div>
               <div class="px-8 mt-10">
                 <div class="">
-                  <h4 class="border-b border-yellow-400">EDUCATION</h4>
+                  <h4 id="nameBg2" class="border-b border-yellow-400">
+                    EDUCATION
+                  </h4>
                   <div class="ml-5 mb-4 mt-4">
-                    <p>2014-2022</p>
-                    <h2>oxford University England</h2>
-                    <p><span>bsc.</span>history and geoinformatics</p>
+                    <p>
+                      <span id="schoolFrom1">2012</span><span>-</span
+                      ><span id="schoolTo1">2014</span>
+                    </p>
+                    <h2 id="uni1">oxford University England</h2>
+                    <p>
+                      <span id="degree1">bsc.</span>
+                      <span id="course1">history and geoinformatics</span>
+                    </p>
                   </div>
                   <div class="ml-5 mb-10">
-                    <p>2014-2022</p>
-                    <h2>oxford University England</h2>
-                    <p><span>bsc.</span>history and geoinformatics</p>
+                    <p>
+                      <span id="schoolFrom2">2012</span><span>-</span
+                      ><span id="schoolTo2">2014</span>
+                    </p>
+                    <h2 id="uni2">oxford University England</h2>
+                    <p>
+                      <span id="degree2">bsc.</span
+                      ><span id="course2">history and geoinformatics</span>
+                    </p>
                   </div>
                 </div>
                 <div>
-                  <h4 class="border-b border-yellow-400">REFERENCE</h4>
+                  <h4 id="nameBg3" class="border-b border-yellow-400">
+                    Hobbies
+                  </h4>
                   <div class="ml-5 mb-4 mt-4">
-                    <h4>John Smith</h4>
-                    <p>Fashion Designer</p>
-                    <p>john.smith@example.com</p>
-                    <p class="">
-                      I collaborated with John on several fashion illustration
-                      projects for his collections
-                    </p>
+                    <p id="hobby1">Writing</p>
+                    <p id="hobby2">Reading</p>
+                    <p id="hobby3">Cooking</p>
+                    <p id="hobby4">Soccer</p>
                   </div>
                 </div>
               </div>
               <div>
                 <div>
-                  <div class="bg-gray-800 flex flex-row">
-                    <span class="bg-yellow-300 w-10"></span
+                  <div class="bg-gray-900 bg-opacity-25 flex flex-row mt-10">
+                    <span id="nameBg4" class="bg-yellow-300 w-10"></span
                     ><span class="ml-5">Phone</span>
                   </div>
-                  <p class="ml-14 mb-2">+2564666411154</p>
+                  <p id="phone" class="ml-14 mb-2">+2564666411154</p>
                 </div>
                 <div>
-                  <div class="bg-gray-800 flex flex-row">
-                    <span class="bg-yellow-300 w-10"></span
+                  <div class="bg-gray-900 bg-opacity-25 flex flex-row">
+                    <span id="nameBg5" class="bg-yellow-300 w-10"></span
                     ><span class="ml-5">Email</span>
                   </div>
-                  <p class="ml-14 mb-2">vijanthegoat@gmail.com</p>
+                  <p id="email" class="ml-14 mb-2 px-3">
+                    vijanthegoat@gmail.com
+                  </p>
                 </div>
                 <div>
-                  <div class="bg-gray-800 flex flex-row">
-                    <span class="bg-yellow-300 w-10"></span
+                  <div class="bg-gray-900 bg-opacity-25 flex flex-row">
+                    <span id="nameBg6" class="bg-yellow-300 w-10"></span
                     ><span class="ml-5">Address</span>
                   </div>
-                  <p class="ml-14 mb-2">
+                  <p id="address" class="ml-14 mb-2">
                     no 2 arochukwu streeet of ginger island west tokyo
                   </p>
                 </div>
@@ -90,7 +162,7 @@
           </div>
           <div class="">
             <div class="mb-4">
-              <div class="bg-yellow-300 h-40 px-20 py-10 mt-10">
+              <div id="nameBg" class="bg-yellow-300 h-40 px-20 py-10 mt-10">
                 <h2 id="myName" class="text-2xl font-bold">
                   Violet Nwaugo Chiamaka
                 </h2>
@@ -203,24 +275,25 @@
           </div>
         </div>
       </div>
-      <div class="mt-8 border border-gray-300 p-4">
-        <div class="overflow-y-auto h-1/2">
+      <div class="mt-4 p-4">
+        <div
+          class="overflow-y-auto h-1/2 shadow-2xl"
+          style="box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5)"
+        >
           <form
             id="resume-form"
-            class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4"
+            class="bg-gray-900 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4"
           >
             <input
               type="file"
               name="picture"
               id="picture"
               accept="image/*"
-              class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="appearance-none text-white border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
 
             <div class="mb-4">
-              <label
-                class="block text-gray-700 text-sm font-bold mb-2"
-                for="name"
+              <label class="block text-white text-sm font-bold mb-2" for="name"
                 >Name</label
               >
               <input
@@ -231,9 +304,7 @@
               />
             </div>
             <div class="mb-4">
-              <label
-                class="block text-gray-700 text-sm font-bold mb-2"
-                for="title"
+              <label class="block text-white text-sm font-bold mb-2" for="title"
                 >Professional title</label
               >
               <input
@@ -244,16 +315,14 @@
               />
             </div>
             <div class="mb-4">
-              <label
-                class="block text-gray-700 text-sm font-bold mb-2"
-                for="about"
+              <label class="block text-white text-sm font-bold mb-2" for="about"
                 >About Me</label
               >
               <textarea
                 class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="AbtMe"
                 rows="3"
-                placeholder="about me"
+                placeholder="paste your about me message here"
               ></textarea>
             </div>
             <div>
@@ -261,9 +330,9 @@
                 Job Experience 1
               </p>
               <div class="flex flex-row">
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="text"
                     >from</label
                   >
@@ -274,9 +343,9 @@
                     placeholder="2012"
                   />
                 </div>
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="phone"
                     >To</label
                   >
@@ -289,9 +358,9 @@
                 </div>
               </div>
               <div class="flex flex-row">
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="text"
                     >Organisation</label
                   >
@@ -302,9 +371,9 @@
                     placeholder="Vijan Industries"
                   />
                 </div>
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="phone"
                     >Role Occupied</label
                   >
@@ -316,9 +385,9 @@
                   />
                 </div>
               </div>
-              <div class="mb-4">
+              <div class="mb-4 m-2">
                 <label
-                  class="block text-gray-700 text-sm font-bold mb-2"
+                  class="block text-white text-sm font-bold mb-2"
                   for="about"
                   >Job description</label
                 >
@@ -335,9 +404,9 @@
                 Job Experience 2
               </p>
               <div class="flex flex-row">
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="text"
                     >from</label
                   >
@@ -348,9 +417,9 @@
                     placeholder="2012"
                   />
                 </div>
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="phone"
                     >To</label
                   >
@@ -363,9 +432,9 @@
                 </div>
               </div>
               <div class="flex flex-row">
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="text"
                     >Organisation</label
                   >
@@ -376,9 +445,9 @@
                     placeholder="Vijan Industries"
                   />
                 </div>
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="phone"
                     >Role Occupied</label
                   >
@@ -390,9 +459,9 @@
                   />
                 </div>
               </div>
-              <div class="mb-4">
+              <div class="mb-4 m-2">
                 <label
-                  class="block text-gray-700 text-sm font-bold mb-2"
+                  class="block text-white text-sm font-bold mb-2"
                   for="about"
                   >Job description</label
                 >
@@ -409,9 +478,9 @@
                 Job Experience 3
               </p>
               <div class="flex flex-row">
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="text"
                     >from</label
                   >
@@ -422,9 +491,9 @@
                     placeholder="2012"
                   />
                 </div>
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="phone"
                     >To</label
                   >
@@ -437,9 +506,9 @@
                 </div>
               </div>
               <div class="flex flex-row">
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="text"
                     >Organisation</label
                   >
@@ -450,9 +519,9 @@
                     placeholder="Vijan Industries"
                   />
                 </div>
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="phone"
                     >Role Occupied</label
                   >
@@ -464,9 +533,9 @@
                   />
                 </div>
               </div>
-              <div class="mb-4">
+              <div class="mb-4 m-2">
                 <label
-                  class="block text-gray-700 text-sm font-bold mb-2"
+                  class="block text-white text-sm font-bold mb-2"
                   for="about"
                   >Job description</label
                 >
@@ -479,15 +548,14 @@
               </div>
             </div>
             <div>
-               <p class="text-center bg-blue-500 text-white py-2 mb-2">
+              <p class="text-center bg-blue-500 text-white py-2 mb-2">
                 Skills Section
               </p>
               <div class="flex flex-row">
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="text"
-                    
                     >Skill1</label
                   >
                   <input
@@ -497,9 +565,9 @@
                     placeholder="photoshop"
                   />
                 </div>
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="phone"
                     >Skill2</label
                   >
@@ -512,9 +580,9 @@
                 </div>
               </div>
               <div class="flex flex-row">
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="text"
                     >Skill3</label
                   >
@@ -525,9 +593,9 @@
                     placeholder="photoshop"
                   />
                 </div>
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="phone"
                     >Skill4</label
                   >
@@ -540,9 +608,9 @@
                 </div>
               </div>
               <div class="flex flex-row">
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="text"
                     >Skill5</label
                   >
@@ -553,9 +621,9 @@
                     placeholder="photoshop"
                   />
                 </div>
-                <div class="mb-4">
+                <div class="mb-4 m-2">
                   <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
+                    class="block text-white text-sm font-bold mb-2"
                     for="phone"
                     >Skill6</label
                   >
@@ -567,33 +635,257 @@
                   />
                 </div>
               </div>
-    
-
-            <div class="mb-4">
-              <label
-                class="block text-gray-700 text-sm font-bold mb-2"
-                for="address"
-                >Address</label
-              >
-              <textarea
-                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="address"
-                rows="3"
-                placeholder="Your address"
-              ></textarea>
+              <p class="text-center bg-blue-500 text-white py-2 mb-2">
+                Contact Section
+              </p>
+              <div class="mb-4 m-2">
+                <label class="block text-white text-sm font-bold mb-2"
+                  >Phone</label
+                >
+                <input
+                  class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="phoneInput"
+                  type="tel"
+                  placeholder="+123456789"
+                />
+              </div>
+              <div class="mb-4 m-2">
+                <label class="block text-white text-sm font-bold mb-2"
+                  >Email</label
+                >
+                <input
+                  class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="emailInput"
+                  type="email"
+                  placeholder="example@examplemail.com"
+                />
+              </div>
+              <div class="mb-4 m-2">
+                <label
+                  class="block text-white text-sm font-bold mb-2"
+                  for="address"
+                  >Address</label
+                >
+                <textarea
+                  class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="addressInput"
+                  rows="3"
+                  placeholder="Your address"
+                ></textarea>
+              </div>
+              <p class="text-center bg-blue-500 text-white py-2 mb-2">
+                Hobby Section
+              </p>
+              <div class="flex flex-row">
+                <div class="mb-4 m-2">
+                  <label
+                    class="block text-white text-sm font-bold mb-2"
+                    for="text"
+                    >Hobby1</label
+                  >
+                  <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="hobby1Input"
+                    type="tel"
+                    placeholder="football"
+                  />
+                </div>
+                <div class="mb-4 m-2">
+                  <label
+                    class="block text-white text-sm font-bold mb-2"
+                    for="phone"
+                    >Hobby2</label
+                  >
+                  <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="hobby2Input"
+                    type="tel"
+                    placeholder="adobe"
+                  />
+                </div>
+              </div>
+              <div class="flex flex-row">
+                <div class="mb-4 m-2">
+                  <label
+                    class="block text-white text-sm font-bold mb-2"
+                    for="text"
+                    >Hobby3</label
+                  >
+                  <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="hobby3Input"
+                    type="tel"
+                    placeholder="photoshop"
+                  />
+                </div>
+                <div class="mb-4 m-2">
+                  <label
+                    class="block text-white text-sm font-bold mb-2"
+                    for="phone"
+                    >Hobby4</label
+                  >
+                  <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="hobby4Input"
+                    type="tel"
+                    placeholder="dancing"
+                  />
+                </div>
+              </div>
             </div>
-            <div class="mb-4">
-              <label
-                class="block text-gray-700 text-sm font-bold mb-2"
-                for="education"
-                >Education</label
+
+            <div>
+              <p class="text-center bg-blue-500 text-white py-2 mb-2">
+                Education
+              </p>
+              <div class="flex flex-row">
+                <div class="mb-4 m-2">
+                  <label
+                    class="block text-white text-sm font-bold mb-2"
+                    for="text"
+                    >from</label
+                  >
+                  <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="schoolFrom1Input"
+                    type="tel"
+                    placeholder="2012"
+                  />
+                </div>
+                <div class="mb-4 m-2">
+                  <label
+                    class="block text-white text-sm font-bold mb-2"
+                    for="phone"
+                    >To</label
+                  >
+                  <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="schoolTo1Input"
+                    type="tel"
+                    placeholder="Present"
+                  />
+                </div>
+              </div>
+              <div class="flex flex-row">
+                <div class="mb-4 m-2">
+                  <label
+                    class="block text-white text-sm font-bold mb-2"
+                    for="text"
+                    >School</label
+                  >
+                  <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="uni1Input"
+                    type="tel"
+                    placeholder="Vijan Industries"
+                  />
+                </div>
+                <div class="mb-4 m-2">
+                  <label
+                    class="block text-white text-sm font-bold mb-2"
+                    for="phone"
+                    >Course</label
+                  >
+                  <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="course1Input"
+                    type="tel"
+                    placeholder="Fashion designer"
+                  />
+                </div>
+              </div>
+              <div class="mb-4 m-2">
+                <label
+                  class="block text-white text-sm font-bold mb-2"
+                  for="about"
+                >
+                  Degree</label
+                >
+                <input
+                  class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="degree1Input"
+                  type="tel"
+                  placeholder="Fashion designer"
+                />
+              </div>
+            </div>
+            <div>
+              <p
+                class="text-center bg-blue-500 text-white py-2 mb-2"
+                onclick="generatePDF()"
               >
-              <input
-                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="education"
-                type="text"
-                placeholder="Highest education qualification"
-              />
+                Education 2
+              </p>
+              <div class="flex flex-row">
+                <div class="mb-4 m-2">
+                  <label
+                    class="block text-white text-sm font-bold mb-2"
+                    for="text"
+                    >from</label
+                  >
+                  <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="schoolFrom2Input"
+                    type="tel"
+                    placeholder="2012"
+                  />
+                </div>
+                <div class="mb-4 m-2">
+                  <label
+                    class="block text-white text-sm font-bold mb-2"
+                    for="phone"
+                    >To</label
+                  >
+                  <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="schoolTo2Input"
+                    type="tel"
+                    placeholder="Present"
+                  />
+                </div>
+              </div>
+              <div class="flex flex-row">
+                <div class="mb-4 m-2">
+                  <label
+                    class="block text-white text-sm font-bold mb-2"
+                    for="text"
+                    >School</label
+                  >
+                  <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="uni2Input"
+                    type="tel"
+                    placeholder="Vijan Industries"
+                  />
+                </div>
+                <div class="mb-4 m-2">
+                  <label
+                    class="block text-white text-sm font-bold mb-2"
+                    for="phone"
+                    >Course</label
+                  >
+                  <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="course2Input"
+                    type="tel"
+                    placeholder="Fashion designer"
+                  />
+                </div>
+              </div>
+              <div class="mb-4 m-2">
+                <label
+                  class="block text-white text-sm font-bold mb-2"
+                  for="about"
+                >
+                  Degree</label
+                >
+                <input
+                  class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="degree2Input"
+                  type="tel"
+                  placeholder="Fashion designer"
+                />
+              </div>
             </div>
             <!-- Additional Input Field for Skill Set -->
 
@@ -601,8 +893,9 @@
               <button
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="submit"
+                onclick=" handleSaveButtonClick(event)"
               >
-                Save Details
+                Save
               </button>
             </div>
           </form>
