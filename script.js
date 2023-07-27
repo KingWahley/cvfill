@@ -11,6 +11,53 @@
 
 // declaring variables
 
+// const inputElements = [
+//   nameInput,
+//   fileInput,
+//   titleInput,
+//   AboutMeInput,
+//   workTo1Input,
+//   workFrom1Input,
+//   jobDescription1Input,
+//   role1Input,
+//   organisation1Input,
+//   workTo2Input,
+//   workFrom2Input,
+//   jobDescription2Input,
+//   role2Input,
+//   organisation2Input,
+//   workTo3Input,
+//   workFrom3Input,
+//   jobDescription3Input,
+//   role3Input,
+//   organisation3Input,
+//   skill1Input,
+//   skill2Input,
+//   skill3Input,
+//   skill4Input,
+//   skill5Input,
+//   skill6Input,
+//   phoneInput,
+//   addressInput,
+//   emailInput,
+//   hobby1Input,
+//   hobby2Input,
+//   hobby3Input,
+//   hobby4Input,
+//   schoolFrom1Input,
+//   schoolTo1Input,
+//   uni1Input,
+//   course1Input,
+//   degree1Input,
+//   schoolFrom2Input,
+//   schoolTo2Input,
+//   uni2Input,
+//   course2Input,
+//   degree2Input,
+// ];
+
+// console.log(inputElements);
+
 const resumeForm = document.getElementById("resume-form");
 const nameInput = document.getElementById("name");
 const nameHeading = document.getElementById("myName");
@@ -120,6 +167,9 @@ const nameBg3 = document.getElementById("nameBg3");
 const nameBg4 = document.getElementById("nameBg4");
 const nameBg5 = document.getElementById("nameBg5");
 const nameBg6 = document.getElementById("nameBg6");
+const myName = document.getElementById("myName");
+
+myName.textContent.toUpperCase();
 
 // function to upload image
 
