@@ -58,6 +58,16 @@
 
 // console.log(inputElements);
 
+const accordionButtons = document.querySelectorAll(".accordion-button");
+
+accordionButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const content = button.nextElementSibling;
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
+  });
+});
+
 const resumeForm = document.getElementById("resume-form");
 const nameInput = document.getElementById("name");
 const nameHeading = document.getElementById("myName");

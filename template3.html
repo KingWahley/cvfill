@@ -12,16 +12,63 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div
       class="fixed top-0 mb-4 flex flex-row justify-between px-4 py-4 shadow-md w-full bg-white z-50 bg-opacity-85"
     >
-      <div class="flex flex-row justify-center z-60">
+      <div class="accordion">
+        <button class="accordion-button">Color Settings</button>
+        <div class="accordion-content">
+          <div class="flex flex-row justify-center z-60">
+            <!-- Your color input code here -->
+            <div class="flex flex-row justify-center z-60">
+              <div class="flex flex-row justify-center items-center mr-2">
+                <label for="color">Primary Color</label>
+                <input
+                  id="colorInput"
+                  class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+                  type="color"
+                />
+              </div>
+              <div class="flex flex-row justify-center items-center mx-2">
+                <label for="color">Secondary Color 1 </label>
+                <input
+                  class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+                  id="colorInput2"
+                  type="color"
+                />
+              </div>
+              <div class="flex flex-row justify-center items-center mx-2">
+                <label for="color">Secondary Color 2 </label>
+                <input
+                  class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+                  id="colorInput3"
+                  type="color"
+                />
+              </div>
+              <div class="flex flex-row justify-center items-center mx-2">
+                <label for="color">Text Color 1 </label>
+                <input
+                  class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+                  id="colorInput4"
+                  type="color"
+                />
+              </div>
+              <div class="flex flex-row justify-center items-center mx-2">
+                <label for="color">Text Color 2 </label>
+                <input
+                  class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+                  id="colorInput5"
+                  type="color"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="flex flex-row justify-center z-60">
         <div class="flex flex-row justify-center items-center mr-5">
           <label for="color">Primary Color</label>
           <input
@@ -62,21 +109,38 @@
             type="color"
           />
         </div>
-      </div>
+      </div> -->
       <div class="ml-15">
-        <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit"
-          onclick="handleSavePdfButtonClick(event)"
-        >
-          Save as pdf
-        </button>
-        <button
+        <div class="flex flex-row">
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+            onclick="handleSavePdfButtonClick(event)"
+          >
+            Save as pdf
+          </button>
+          <div
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mx-5"
+          >
+            <label for="picture" class="custom-file-input">
+              Change image
+              <input
+                type="file"
+                name="picture"
+                id="picture"
+                accept="image/*"
+                class="appearance-none"
+              />
+            </label>
+          </div>
+        </div>
+
+        <!-- <button
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           onclick="captureAndDownload(event) "
         >
           Save as image
-        </button>
+        </button> -->
       </div>
     </div>
     <div class="mt-20">
@@ -85,60 +149,22 @@
     <div class="flex flex-row w-full bg-gray-900">
       <div class="container mx-auto p-4">
         <div id="designs" class="flex bg-gray-200">
-          <div id="colorBg1" class="w-1/3 text-white bg-gray-800">
-            <div id="lSide" class="">
-              <h2 id="myName" class="text-2xl mt-5 text-center font-bold">
-                VIOLET NWAUGO
-              </h2>
-              <h4 id="ProTitle" class="text-sm text-center">
-                Fashion Illustrator
-              </h4>
+          <div class="">
+            <div class="mb-4">
+              <div id="nameBg" class="bg-yellow-300 h-40 px-20 py-10 mt-10">
+                <h2 id="myName" class="text-2xl font-bold">
+                  Violet Nwaugo Chiamaka
+                </h2>
+                <h4 id="ProTitle" class="text-lg">Fashion Illustrator</h4>
+              </div>
+              <div class="w-full pr-20">
+                <div class="w-full">
+                  <div
+                    class="mt-5 py-4 px-8 font-bold w-[50px] bg-yellow-400 flex justify-end text-xl"
+                  >
+                    <h4 id="nameBg2">EDUCATION</h4>
+                  </div>
 
-              <div class="w-full p-5">
-                <img
-                  id="uploaded-image"
-                  src="https://img.freepik.com/free-photo/portrait-attractive-thoughtful-girl-smiling-looking-left-white_1258-19127.jpg?w=2000"
-                  alt="your image here"
-                  class="h-full object-cover"
-                  style="border-radius: 50%; border: 7px solid white"
-                />
-              </div>
-              <p class="text-center text-2xl">Contact Me</p>
-              <div class="px-2">
-                <div>
-                  <div class="bg-gray-900 bg-opacity-25 flex flex-row mt-5">
-                    <span id="" class="px-5 w-10"
-                      ><i class="fas fa-phone"></i></span
-                    ><span class="ml-5">Phone</span>
-                  </div>
-                  <p id="phone" class="ml-14 mb-2">+2564666411154</p>
-                </div>
-                <div>
-                  <div class="bg-gray-900 bg-opacity-25 flex flex-row">
-                    <span id="" class="px-5 w-10"
-                      ><i class="fas fa-envelope"></i></span
-                    ><span class="ml-5">Email</span>
-                  </div>
-                  <p id="email" class="ml-14 mb-2 px-3">
-                    vijanthegoat@gmail.com
-                  </p>
-                </div>
-                <div>
-                  <div class="bg-gray-900 bg-opacity-25 flex flex-row">
-                    <span id="" class="px-5 w-10">
-                      <i class="fas fa-map-marker-alt"></i></span
-                    ><span class="ml-5">Address</span>
-                  </div>
-                  <p id="address" class="ml-14 mb-2">
-                    no 2 arochukwu streeet of ginger island west tokyo
-                  </p>
-                </div>
-              </div>
-              <div class="px-8 mt-10">
-                <div class="">
-                  <h4 id="nameBg2" class="border-b border-yellow-400">
-                    EDUCATION
-                  </h4>
                   <div class="ml-5 mb-4 mt-4">
                     <p>
                       <span id="schoolFrom1">2012</span><span>-</span
@@ -163,59 +189,21 @@
                   </div>
                 </div>
                 <div>
-                  <h4 id="nameBg3" class="border-b border-yellow-400">
-                    Hobbies
-                  </h4>
-                  <div class="ml-5 mb-4 mt-4">
-                    <p id="hobby1">Writing</p>
-                    <p id="hobby2">Reading</p>
-                    <p id="hobby3">Cooking</p>
-                    <p id="hobby4">Soccer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="">
-            <div class="mb-4">
-              <!-- <div
-                id="nameBg"
-                class="bg-yellow-300 h-40 px-20 py-10 mt-10"
-              ></div> -->
-              <div class="ml-10 mr-5">
-                <div>
                   <div
-                    class="flex flex-row mt-4 py-2 items-center border-b border-black mb-4"
+                    class="mt-5 py-4 px-8 font-bold w-[50px] bg-yellow-400 flex justify-end text-xl"
                   >
-                    <i class="fas fa-user" style="font-size: 24px"></i>
-                    <h3 class="text-xl font-bold ml-2">About Me</h3>
+                    <h3 class="">Experience</h3>
                   </div>
-
-                  <p id="AboutMe">
-                    I am a passionate fashion illustrator with an eye for
-                    elegance and creativity. Through my art, I strive to capture
-                    the beauty of style and transform it into captivating
-                    illustrations. With each stroke of my pen, I bring life to
-                    the latest trends, expressing the essence of fashion with a
-                    unique touch.
-                  </p>
-                </div>
-                <div>
-                  <div
-                    class="flex flex-row mt-4 py-2 items-center border-b border-black mb-4"
-                  >
-                    <i class="fas fa-briefcase"></i>
-                    <h3 class="text-xl font-bold ml-2">Work Experience</h3>
-                  </div>
-
                   <div>
                     <div class="flex mb-4">
+                      <p class="w-1/4">
+                        <span id="workFrom1">2012</span><span>-</span
+                        ><span id="workTo1">2014</span>
+                      </p>
                       <div class="w-3/4">
+                        <p id="copanyText1" class="text-lg">Vijan Designs</p>
                         <p id="roleText1" class="font-bold">
                           Freelance Fashion Illustrator
-                        </p>
-                        <p id="copanyText1" class="text-sm italic">
-                          Vijan Designs
                         </p>
                         <p></p>
                         <p id="jobDescription1">
@@ -225,18 +213,16 @@
                           Participating in fashion events and exhibitions
                         </p>
                       </div>
-                      <p class="w-1/4 italic">
-                        <span id="workFrom1">2012</span><span>-</span
-                        ><span id="workTo1">2014</span>
-                      </p>
                     </div>
                     <div class="flex mb-4">
+                      <p class="w-1/4">
+                        <span id="workFrom2">2012</span><span>-</span
+                        ><span id="workTo2">2014</span>
+                      </p>
                       <div class="w-3/4">
+                        <p id="copanyText2" class="text-lg">Vijan Designs</p>
                         <p id="roleText2" class="font-bold">
                           Freelance Fashion Illustrator
-                        </p>
-                        <p id="copanyText2" class="text-sm italic">
-                          Vijan Designs
                         </p>
                         <p></p>
                         <p id="jobDescription2">
@@ -246,20 +232,17 @@
                           Participating in fashion events and exhibitions
                         </p>
                       </div>
-                      <p class="w-1/4 italic">
-                        <span id="workFrom2">2012</span><span>-</span
-                        ><span id="workTo2">2014</span>
-                      </p>
                     </div>
                     <div class="flex mb-4">
+                      <p class="w-1/4">
+                        <span id="workFrom3">2012</span><span>-</span
+                        ><span id="workTo3">2014</span>
+                      </p>
                       <div class="w-3/4">
+                        <p id="copanyText3" class="text-lg">Vijan Designs</p>
                         <p id="roleText3" class="font-bold">
                           Freelance Fashion Illustrator
                         </p>
-                        <p id="copanyText3" class="text-sm italic">
-                          Vijan Designs
-                        </p>
-
                         <p></p>
                         <p id="jobDescription3">
                           Working with various clients, including fashion
@@ -268,33 +251,78 @@
                           Participating in fashion events and exhibitions
                         </p>
                       </div>
-                      <p class="w-1/4 italic">
-                        <span id="workFrom3">2012</span><span>-</span
-                        ><span id="workTo3">2014</span>
-                      </p>
                     </div>
                   </div>
                 </div>
-
-                <div>
-                  <div
-                    class="mt-4 border-b border-black mb-4 py-2 flex fle-row items-center"
-                  >
-                    <i class="fas fa-chart-bar"></i>
-                    <h3 class="text-xl font-bold ml-2">Skills</h3>
+              </div>
+            </div>
+          </div>
+          <div id="colorBg1" class="w-1/3 text-white bg-gray-800">
+            <div id="lSide " class="">
+              <div class="w-full">
+                <img
+                  id="uploaded-image"
+                  src="https://img.freepik.com/free-photo/portrait-attractive-thoughtful-girl-smiling-looking-left-white_1258-19127.jpg?w=2000"
+                  alt="your image here"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="px-8 mt-10">
+                <!-- <div>
+                  <h4 id="nameBg3" class="border-b border-yellow-400">
+                    Hobbies
+                  </h4>
+                  <div class="ml-5 mb-4 mt-4">
+                    <p id="hobby1">Writing</p>
+                    <p id="hobby2">Reading</p>
+                    <p id="hobby3">Cooking</p>
+                    <p id="hobby4">Soccer</p>
                   </div>
-
-                  <div class="flex">
-                    <div class="w-1/2">
-                      <p id="skill1">Photoshop</p>
-                      <p id="skill2">Photoshop</p>
-                      <p id="skill3">Photoshop</p>
-                    </div>
-                    <div class="w-1/2">
-                      <p id="skill4">Photoshop</p>
-                      <p id="skill5">Photoshop</p>
-                      <p id="skill6">Photoshop</p>
-                    </div>
+                </div> -->
+              </div>
+              <div class="p-10">
+                <div>
+                  <div class="bg-gray-900 bg-opacity-25 flex flex-row mt-10">
+                    <span id="nameBg4" class="bg-yellow-300 w-10"></span
+                    ><span class="ml-5">Phone</span>
+                  </div>
+                  <p id="phone" class="ml-14 mb-2">+2564666411154</p>
+                </div>
+                <div>
+                  <div class="bg-gray-900 bg-opacity-25 flex flex-row">
+                    <span id="nameBg5" class="bg-yellow-300 w-10"></span
+                    ><span class="ml-5">Email</span>
+                  </div>
+                  <p id="email" class="ml-14 mb-2 px-3">
+                    vijanthegoat@gmail.com
+                  </p>
+                </div>
+                <div>
+                  <div class="bg-gray-900 bg-opacity-25 flex flex-row">
+                    <span id="nameBg6" class="bg-yellow-300 w-10"></span
+                    ><span class="ml-5">Address</span>
+                  </div>
+                  <p id="address" class="ml-14 mb-2">
+                    no 2 arochukwu streeet of ginger island west tokyo
+                  </p>
+                </div>
+              </div>
+              <div>
+                <h3
+                  class="text-xl font-bold mt-4 border-b border-black mb-4 py-2"
+                >
+                  Skill Set
+                </h3>
+                <div class="flex flex-row">
+                  <div class="w-1/2">
+                    <p id="skill1">Photoshop</p>
+                    <p id="skill2">Photoshop</p>
+                    <p id="skill3">Photoshop</p>
+                  </div>
+                  <div class="w-1/2">
+                    <p id="skill4">Photoshop</p>
+                    <p id="skill5">Photoshop</p>
+                    <p id="skill6">Photoshop</p>
                   </div>
                 </div>
               </div>
@@ -302,7 +330,7 @@
           </div>
         </div>
       </div>
-      <div class="mt-4 p-4">
+      <!-- <div class="mt-4 p-4">
         <div
           class="overflow-y-auto h-1/2 shadow-2xl"
           style="box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5)"
@@ -914,9 +942,9 @@
                 />
               </div>
             </div>
-            <!-- Additional Input Field for Skill Set -->
+            - Additional Input Field for Skill Set -->
 
-            <div class="flex items-center justify-center">
+            <!-- <div class="flex items-center justify-center">
               <button
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="submit"
@@ -924,10 +952,10 @@
               >
                 Save
               </button>
-            </div>
+            </div> -->
           </form>
         </div>
-      </div>
+      </div> 
     </div>
     <script src="script.js"></script>
   </body>

@@ -1,0 +1,35 @@
+.accordion {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0px;
+  overflow: hidden;
+}
+.accordion-button {
+  background-color: #f1f1f1;
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+.accordion-content {
+  padding: 10px;
+  display: none;
+  background-color: #fff;
+}
+
+/* Hide the default input text */
+input[type="file"] {
+  display: none;
+}
+/* Style the custom file input */
+.custom-file-input {
+  /* background-color: #2b6cb0; */
+  color: white;
+  border: none;
+  /* padding: 5px 10px; */
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
