@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore a showcase of innovative web designs and interactive user experiences on my portfolio site. As a skilled front-end developer, I blend creativity with coding expertise to craft visually stunning and responsive websites. Discover my projects that seamlessly merge aesthetics and functionality, highlighting my passion for creating engaging online spaces.">
+    <link rel="icon" href="assets/wale.JPG" type="image/JPG">
+    <link rel="shortcut icon" href="assets/wale.JPG" type="image/JPG">
+       <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0WLJ9Z0L6P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0WLJ9Z0L6P');
+    </script>
+    <title>The Olawale Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body class="mainBody">
+    <nav id="desktop-nav">
+      <div class="logo">Olawale</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Olawale</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img
+        class="profile-pic"
+          style="border-radius: 50%"
+          src="./assets/wale.JPG"
+          alt="John Doe profile picture"
+        />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Peter Olawale</h1>
+        <p class="section__text__p2">Frontend Developer</p>
+        <div class="btn-container">
+          <button
+          style="text-decoration: none;"
+            class="btn btn-color-2"
+            onclick="window.open('./assets/olawale-cv.jpg')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='#contact'">
+            Contact Info
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/olawale-peter-5898a9249/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/KingWahley'"
+          />
+        </div>
+      </div>
+      
+    </section>
+    
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            style="height: 110%"
+            src="./assets/Nex.jpg"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container2">
+              <img
+                src="./assets/experience.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Experience</h3>
+              <p>2+ years <br />Frontend Development</p>
+            </div>
+            <div class="details-container2">
+              <img
+                src="./assets/education.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>B.Sc. Bachelors Degree</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              I am Olawale Peter, a front-end developer with a passion for
+              developing user-friendly websites and web applications. Proficient
+              in Javascript, HTML, CSS and React. Familiar with Photoshop,
+              Figma, Adobe Xd and other design tools. Strong ability to create
+              responsive and visually appealing designs with proven ability to
+              work effectively in a team enviroment. Strong attention to detail
+              and a passion for staying current with the latest technology and
+              industry trends
+            </p>
+          </div>
+        </div>
+      </div>
+      <a
+        href="#experience""
+        ><img
+          src="./assets/arrow.png"
+          alt="Arrow icon"
+          class="icon arrow"
+          
+      /></a>
+    </section>
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">SkILL SET</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container2">
+            <h2 class="experience-sub-title">Frontend Development</h2>
+            <div id="Skills" class="article-container">
+            
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      <a href="#projects"><img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        
+      /></a>
+      
+    </section>
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+         
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                style="height: 170px"
+                src="./assets/marvyAi.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <div class="project-bg">
+            <h2 class="experience-sub-title project-title">Marvy Ai</h2>
+            <p class="project-sub">
+              Specially designed to help you find information on movies by
+              providing their summaries and cover posters based on your inputs
+            </p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://marvyai.netlify.app/'"
+              >
+                Live Demo
+              </button>
+              </div>
+            </div>
+           
+          </div>
+               <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                style="height: 170px"
+                src="./assets/geoGuide.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <div class="project-bg">
+             <h2 class="experience-sub-title project-title">Geo-Guide</h2>
+            <p class="project-sub">
+              Easily search for a specific country and get a comprehensive
+              overview of its population, flag, coat of arms, official
+              languages, and more
+            </p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://mygeoguide.netlify.app/'"
+              >
+                Live Demo
+              </button>
+              </div>
+            </div>
+           
+          </div>
+              <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                style="height: 170px"
+                src="./assets/quizzy.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <div class="project-bg">
+             <h2 class="experience-sub-title project-title">Quizzy !</h2>
+            <p class="project-sub">
+              Test your knowledge on several areas ranging from general
+              Knowledge to mathematics while having fun
+              with a really engaging user interface.
+            </p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://quizzyweb.netlify.app/'"
+              >
+                Live Demo
+              </button>
+              </div>
+            </div>
+           
+          </div>
+           <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                style="height: 170px"
+                src="./assets/suvatrip.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <div class="project-bg">
+             <h2 class="experience-sub-title project-title">Suvatrip</h2>
+            <p class="inProgress">(in progress)</p>
+            <p class="project-sub">
+              An online hotel booking website
+            </p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://suvatrip-beta-latest.vercel.app/'"
+              >
+                Live Demo
+              </button>
+              </div>
+            </div>
+           
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                style="height: 170px"
+                src="./assets/coffee.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <div class="project-bg">
+              <h2 class="experience-sub-title project-title">Boreal Coffee</h2>
+            <p class="inProgress">(copy)</p>
+            <p class="project-sub">
+              A full copy of the Boreal Coffee website
+            </p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://boreal-coffeecopy.netlify.app/'"
+              >
+                Live Demo
+              </button>
+              </div>
+            </div>
+           
+          </div>
+                 <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                style="height: 170px"
+                src="./assets/cv.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <div class="project-bg">
+           <h2 class="experience-sub-title project-title">CV Maker </h2>
+            <p class="inProgress">(in progress)</p>
+            <p class="project-sub">
+              SCustomize from our diverse templates CV that reflects your essence and aligns perfectly with your career aspirations.
+            </p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://cv-testversion.netlify.app/'"
+              >
+                Live Demo
+              </button>
+              </div>
+            </div>
+           
+          </div>
+           <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                style="height: 170px"
+                src="./assets/emojiFactory.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <div class="project-bg">
+              <h2 class="experience-sub-title project-title">Emoji Factory</h2>
+            <p class="project-sub">
+             Create ur own unique emojis and share them with friends with our easy to use emoji maker, you can customize your own expressions and characters
+            </p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://emojifactory.netlify.app/'"
+              >
+                Live Demo
+              </button>
+              </div>
+            </div>
+           
+          </div>
+         <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                style="height: 170px"
+                src="./assets/tellStory.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <div class="project-bg">
+             <h2 class="experience-sub-title project-title">Tell Story</h2>
+            <p class="project-sub">
+              Whether you're in the mood for a thrilling mystery, a heartwarming romance, or a hilarious comedy, Simply select your preferred genre and hit the button.
+            </p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://tellstory.netlify.app/'"
+              >
+                Live Demo
+              </button>
+              </div>
+            </div>
+           
+          </div>
+           <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                style="height: 170px"
+                src="./assets/blog.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <div class="project-bg">
+              <h2 class="experience-sub-title project-title">The Olawale Blog</h2>
+            
+              <p class="project-sub">
+              Discover timeless articles and stories that captivates the mind
+              </p>
+              <div class="btn-container">
+                <button
+                  class="btn btn-color-2 project-btn"
+                  onclick="location.href='https://github.com/'"
+                >
+                  Github
+                </button>
+                <button
+                  class="btn btn-color-2 project-btn"
+                  onclick="location.href='https://theolawaleblog.netlify.app/'"
+                >
+                  Live Demo
+                </button>
+              </div>
+            </div>
+           
+          </div>
+          
+          
+        </div>
+      </div>
+      <a href="#contact"><img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+       
+      /></a>
+      
+    </section>
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:kingwahley@gmail.com">kingwahley@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com/in/olawale-peter-5898a9249/">LinkedIn</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/Black-and-white-Whatsapp-logo-vector-PNG.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="tel:+2349150562784">+234 915 056 2784</p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2023 Olawale. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+      function toggleMenu() {
+  const menu = document.querySelector(".menu-links");
+  const icon = document.querySelector(".hamburger-icon");
+  menu.classList.toggle("open");
+  icon.classList.toggle("open");
+}
+
+const SkillSection = document.getElementById("Skills");
+
+const skills = [
+  "https://img.shields.io/static/v1?style=for-the-badge&message=HTML5&color=E34F26&logo=HTML5&logoColor=FFFFFF&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=CSS&color=1572B6&logo=CSS3&logoColor=FFFFFF&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Tailwind+CSS&color=38B2AC&logo=Tailwind+CSS&logoColor=FFFFFF&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=JavaScript&color=F7DF1E&logo=JavaScript&logoColor=000000&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Sass&color=CC6699&logo=Sass&logoColor=FFFFFF&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=React&color=61DAFB&logo=React&logoColor=FFFFFF&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Next.js&color=000000&logo=Next.js&logoColor=FFFFFF&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Dart&color=0175C2&logo=Dart&logoColor=FFFFFF&label=Intermediate",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Egitlementor&color=00A98F&logo=Elementor&logoColor=FFFFFF&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Firebase&color=FFCA28&logo=Firebase&logoColor=FFFFFF&label=Intermediate",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Netlify&color=00C7B7&logo=Netlify&logoColor=FFFFFF&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Visual+Studio&color=5C2D91&logo=Visual+Studio&logoColor=FFFFFF&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Git&color=F05032&logo=Git&logoColor=FFFFFF&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=181717&logo=GitHub&logoColor=FFFFFF&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Bootstrap&color=7952B3&logo=Bootstrap&logoColor=FFFFFF&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=TypeScript&color=3178C6&logo=TypeScript&logoColor=FFFFFF&label=Intermediate",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Python&color=3776AB&logo=Python&logoColor=FFFFFF&label=Intermediate",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=WordPress&color=21759B&logo=WordPress&logoColor=FFFFFF&label=Experienced",
+
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Figma&color=F24E1E&logo=Figma&logoColor=FFFFFF&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Adobe+XD&color=FF61F6&logo=Adobe+XD&logoColor=FFFFFF&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Photoshop&color=31A8FF&logo=Adobe+Photoshop&logoColor=FFFFFF&label=Experienced",
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Adobe+Illustrator&color=FF9A00&logo=Adobe+Illustrator&logoColor=FFFFFF&label=Intermediate",
+
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Linux&color=FCC624&logo=Linux&logoColor=000000&label=Experienced",
+
+  "https://img.shields.io/static/v1?style=for-the-badge&message=Node.js&color=339933&logo=Node.js&logoColor=FFFFFF&label=Intermediate",
+];
+
+function generateSkillHTML(skill) {
+  return `<div class="skillSet"><img class="skills" src="${skill}" alt=""></div> `;
+}
+
+const html = skills.map(generateSkillHTML).join("");
+
+SkillSection.insertAdjacentHTML("beforeend", html);
+
+    </script>
+  </body>
+</html>

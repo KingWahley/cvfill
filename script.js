@@ -307,6 +307,14 @@ function handleSavePdfButtonClick(event) {
 }
 
 function generatePDF() {
+  document.body.style.transform = "rotate(0deg)";
+  document.body.style.transformOrigin = "";
+  document.body.style.width = "";
+  document.body.style.height = "";
+  document.body.style.overflowX = "";
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.left = "";
   const element = document.getElementById("designs");
   const opt = {
     margin: 5,
@@ -336,3 +344,15 @@ function captureAndDownload(event) {
     link.click();
   });
 }
+
+const openModalBtn = document.getElementById("openModal");
+const closeModalBtn = document.getElementById("closeModal");
+const modal = document.getElementById("modal");
+
+openModalBtn.addEventListener("click", () => {
+  modal.style.display = "flex";
+});
+
+closeModalBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
