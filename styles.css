@@ -116,3 +116,18 @@ input[type="file"] {
     transform: translateY(0);
   }
 }
+
+.Settings {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.rowws {
+  gap: 10px;
+}

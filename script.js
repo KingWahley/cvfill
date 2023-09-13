@@ -235,11 +235,11 @@ getTextColor(colorInput5, lSide);
 
 // function to get text values
 
-const getInput = (from, to) => {
-  from.addEventListener("input", function () {
-    to.textContent = from.value;
-  });
-};
+// const getInput = (from, to) => {
+//   from.addEventListener("input", function () {
+//     to.textContent = from.value;
+//   });
+// };
 
 // calling functions
 getInput(nameInput, nameHeading);

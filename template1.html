@@ -19,48 +19,50 @@
     <div
       class="fixed top-0 mb-4 flex flex-row justify-between px-4 py-4 shadow-md w-full bg-white z-50 bg-opacity-85"
     >
-      <div class="accordion">
+     
+      <div class="Settings">
+       <div class="accordion">
         <button class="accordion-button">Color Settings</button>
         <div class="accordion-content">
-          <div class="flex flex-row justify-center z-60">
+          <div class="flex flex-row justify-center z-60 text-left">
             <!-- Your color input code here -->
-            <div class="flex flex-row justify-center z-60">
-              <div class="flex flex-row justify-center items-center mr-2">
+            <div  class="flex flex-col justify-center z-60">
+              <div class="flex flex-row items-center justify-between ml-2">
                 <label for="color">Primary Color</label>
                 <input
                   id="colorInput"
-                  class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+                  class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 cursor-pointer m-2 "
                   type="color"
                 />
               </div>
-              <div class="flex flex-row justify-center items-center mx-2">
+              <div class="flex  flex-row items-center justify-between mx-2">
                 <label for="color">Secondary Color 1 </label>
                 <input
-                  class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+                  class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 cursor-pointer m-2 "
                   id="colorInput2"
                   type="color"
                 />
               </div>
-              <div class="flex flex-row justify-center items-center mx-2">
+              <div class="flex flex-row  items-center justify-between mx-2">
                 <label for="color">Secondary Color 2 </label>
                 <input
-                  class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+                  class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 cursor-pointer m-2 "
                   id="colorInput3"
                   type="color"
                 />
               </div>
-              <div class="flex flex-row justify-center items-center mx-2">
+              <div class="flex flex-row  items-center justify-between mx-2">
                 <label for="color">Text Color 1 </label>
                 <input
-                  class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+                  class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 cursor-pointer m-2 "
                   id="colorInput4"
                   type="color"
                 />
               </div>
-              <div class="flex flex-row justify-center items-center mx-2">
+              <div class="flex flex-row  items-center justify-between mx-2">
                 <label for="color">Text Color 2 </label>
                 <input
-                  class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+                  class="px-[5px] py-[5px] ml-2 shadow-md rounded-lg border-2 border-gray-300 cursor-pointer m-2 "
                   id="colorInput5"
                   type="color"
                 />
@@ -68,6 +70,42 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="accordion">
+        <button class="accordion-button">Add/remove fields</button>
+        <div class="accordion-content">
+          <div class="flex flex-row justify-center z-60">
+            <!-- Your color input code here -->
+            <div class="flex flex-row justify-center z-60">
+              <div class="flex flex-row justify-center items-center mr-2">
+                <div class="rowws">
+                <div class="fields">
+                  <label for="color" class="hover:bg-green-300 px-2 cursor-pointer">Add Experience</label>
+                  <label for="color" class="hover:bg-red-500 px-2 cursor-pointer">Remove Experience</label>
+                </div>
+                <div class="fields">
+                  <label for="color" class="hover:bg-green-300 px-2 cursor-pointer">Add Education</label>
+                  <label for="color" class="hover:bg-red-500 px-2 cursor-pointer">Remove Education</label>
+                </div>
+                <div class="fields">
+                  <label for="color" class="hover:bg-green-300 px-2 cursor-pointer">Add Hobby</label>
+                  <label for="color" class="hover:bg-red-500 px-2 cursor-pointer">Remove Hobby</label>
+                </div>
+                <div class="fields">
+                  <label for="color" class="hover:bg-green-300 px-2 cursor-pointer">Add Skill</label>
+                  <label for="color" class="hover:bg-red-500 px-2 cursor-pointer">Remove Skill</label>
+                </div>
+                </div>
+                
+              </div>
+              
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
       <!-- <div class="flex flex-row justify-center z-60">
         <div class="flex flex-row justify-center items-center mr-5">
@@ -135,13 +173,6 @@
             </label>
           </div>
         </div>
-
-        <!-- <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          onclick="captureAndDownload(event) "
-        >
-          Save as image
-        </button> -->
       </div>
     </div>
     <div class="mt-20">
