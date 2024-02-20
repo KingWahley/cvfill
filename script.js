@@ -301,9 +301,35 @@ getColor(colorInput3, nameBg4);
 getColor(colorInput3, nameBg5);
 getColor(colorInput3, nameBg6);
 
+function scrollToTop() {
+  window.scrollTo(0, 0);
+}
+
 function handleSavePdfButtonClick(event) {
   event.preventDefault();
   generatePDF();
+}
+
+// show delete buttons when add buttons are clicked
+function showDeleteEducationButton() {
+  var deleteBtn = document.getElementById("deleteEducationBtn");
+  deleteBtn.style.opacity = "1";
+}
+function showDeleteSkillButton() {
+  var deleteButt = document.getElementById("deleteSkillsBtn");
+  deleteButt.style.opacity = "1";
+}
+
+// hide buttons when creating pdf
+function hideElements() {
+  document.getElementById("addExperienceBtn").style.display = "none";
+  document.getElementById("addSkillsBtn").style.display = "none";
+  document.getElementById("addEducationBtn").style.display = "none";
+  document.getElementById("deleteSkillsBtn").style.display = "none";
+  document.getElementById("deleteEducationBtn").style.display = "none";
+  document.querySelectorAll(".removeBtn").forEach(function (btn) {
+    btn.style.display = "none";
+  });
 }
 
 function generatePDF() {
@@ -315,7 +341,9 @@ function generatePDF() {
   document.body.style.position = "";
   document.body.style.top = "";
   document.body.style.left = "";
+  scrollToTop();
   const element = document.getElementById("designs");
+
   const opt = {
     margin: 5,
     filename: "designs.pdf",

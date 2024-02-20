@@ -131,3 +131,20 @@ input[type="file"] {
 .rowws {
   gap: 10px;
 }
+
+.removeBtn {
+  background-color: red; /* Green */
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.removeBtn:hover {
+  background-color: #cc0000; /* Darker green */
+}
