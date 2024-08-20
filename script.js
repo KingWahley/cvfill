@@ -1,63 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//   const resumeForm = document.getElementById("resume-form");
-//   const nameInput = document.getElementById("name");
-//   const nameHeading = document.getElementById("myName");
-
-//   resumeForm.addEventListener("submit", function (event) {
-//     event.preventDefault();
-//     nameHeading.textContent = nameInput.value;
-//   });
-// });
-
-// declaring variables
-
-// const inputElements = [
-//   nameInput,
-//   fileInput,
-//   titleInput,
-//   AboutMeInput,
-//   workTo1Input,
-//   workFrom1Input,
-//   jobDescription1Input,
-//   role1Input,
-//   organisation1Input,
-//   workTo2Input,
-//   workFrom2Input,
-//   jobDescription2Input,
-//   role2Input,
-//   organisation2Input,
-//   workTo3Input,
-//   workFrom3Input,
-//   jobDescription3Input,
-//   role3Input,
-//   organisation3Input,
-//   skill1Input,
-//   skill2Input,
-//   skill3Input,
-//   skill4Input,
-//   skill5Input,
-//   skill6Input,
-//   phoneInput,
-//   addressInput,
-//   emailInput,
-//   hobby1Input,
-//   hobby2Input,
-//   hobby3Input,
-//   hobby4Input,
-//   schoolFrom1Input,
-//   schoolTo1Input,
-//   uni1Input,
-//   course1Input,
-//   degree1Input,
-//   schoolFrom2Input,
-//   schoolTo2Input,
-//   uni2Input,
-//   course2Input,
-//   degree2Input,
-// ];
-
-// console.log(inputElements);
-
 const accordionButtons = document.querySelectorAll(".accordion-button");
 
 accordionButtons.forEach((button) => {
@@ -320,16 +260,18 @@ function showDeleteSkillButton() {
   deleteButt.style.opacity = "1";
 }
 
-// hide buttons when creating pdf
-function hideElements() {
-  document.getElementById("addExperienceBtn").style.display = "none";
-  document.getElementById("addSkillsBtn").style.display = "none";
-  document.getElementById("addEducationBtn").style.display = "none";
-  document.getElementById("deleteSkillsBtn").style.display = "none";
-  document.getElementById("deleteEducationBtn").style.display = "none";
-  document.querySelectorAll(".removeBtn").forEach(function (btn) {
-    btn.style.display = "none";
+function hideAllButtons() {
+  const buttons = document.querySelectorAll("button");
+  buttons.forEach((button) => {
+    button.style.display = "none";
   });
+
+  // Show the buttons again after 2 seconds
+  setTimeout(() => {
+    buttons.forEach((button) => {
+      button.style.display = "";
+    });
+  }, 2000); // 2000 milliseconds = 2 seconds
 }
 
 function generatePDF() {
@@ -345,8 +287,8 @@ function generatePDF() {
   const element = document.getElementById("designs");
 
   const opt = {
-    margin: 5,
-    filename: "designs.pdf",
+    margin: 1,
+    filename: myName.textContent,
     image: { type: "jpeg", quality: 1 },
     html2canvas: { scale: 2 },
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },

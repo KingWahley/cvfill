@@ -83,7 +83,7 @@
           <button
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
-            onclick="handleSavePdfButtonClick(event); hideElements()
+            onclick="handleSavePdfButtonClick(event); hideAllButtons()"
 ;"
           >
             Save as pdf
@@ -112,7 +112,7 @@
     <div id="designs" class="container mx-auto px-2">
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
         <header class="text-center bg-gray-800 text-white px-6 py-4">
-          <h1 id="fullName" contenteditable="true" class="text-3xl font-bold">
+          <h1 id="myName" contenteditable="true" class="text-3xl font-bold">
             Peter Olawale
           </h1>
           <p id="jobTitle" contenteditable="true" class="text-lg font-semibold">
@@ -158,7 +158,7 @@
               <p
                 id="summary"
                 contenteditable="true"
-                class="text-gray-800 mt-2 text-justify"
+                class="text-gray-800 mt-2 text-left"
               >
                 Accomplished geologist with a proven track record of conducting
                 comprehensive geological analyses and delivering valuable

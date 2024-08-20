@@ -17,11 +17,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <link rel="stylesheet" href="styles.css">
+    
   </head>
   <body >
   
    <div
-      class="fixed top-0 mb-4 flex flex-row justify-between px-4 py-4 shadow-md w-full bg-white z-50 bg-opacity-85"
+      class="fixed top-0 mb-4 flex flex-row justify-between px-4 py-4 shadow-md w-full  z-50 bg-opacity-85"
     >
       <div class="accordion">
         <button class="accordion-button">Color Settings</button>
@@ -123,7 +124,7 @@
           <button
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
-            onclick="handleSavePdfButtonClick(event)"
+            onclick="handleSavePdfButtonClick(event); hideAllButtons()"
           >
             Save as pdf
           </button>
@@ -158,35 +159,62 @@
           src="https://img.freepik.com/free-photo/portrait-attractive-thoughtful-girl-smiling-looking-left-white_1258-19127.jpg?w=2000"
           alt="your image here"
           class="w-full h-full object-cover"
+           style="width: 2600px; height: auto;"
         />
       </div>
       <div class="px-8 mt-10">
-        <div contenteditable="true" class="">
+        <div id="educationContainer" class="">
           <h4 id="nameBg2" class="border-b border-yellow-400" contenteditable="true">
             EDUCATION
           </h4>
-          <div class="ml-5 mb-4 mt-4">
-            <p>
-              <span id="schoolFrom1" contenteditable="true">2012</span><span>-</span
-              ><span id="schoolTo1" contenteditable="true">2014</span>
-            </p>
-            <h2 id="uni1" contenteditable="true">oxford University England</h2>
-            <p>
-              <span id="degree1" contenteditable="true">bsc.</span>
-              <span id="course1" contenteditable="true">history and geoinformatics</span>
-            </p>
-          </div>
-          <div class="ml-5 mb-10">
-            <p>
-              <span id="schoolFrom2" contenteditable="true">2012</span><span>-</span
-              ><span id="schoolTo2" contenteditable="true">2014</span>
-            </p>
-            <h2 id="uni2" contenteditable="true">oxford University England</h2>
-            <p>
-              <span id="degree2" contenteditable="true">bsc.</span
-              ><span id="course2" contenteditable="true">history and geoinformatics</span>
-            </p>
-          </div>
+          
+            <div id="educationSection">
+              <!-- Example Education Entry -->
+              <div class="mb-4 education-entry">
+                <div class="w-full">
+                  <p contenteditable="true" class="font-bold">University of Ilorin</p>
+                  <p contenteditable="true">Bachelor of Science</p>
+                  <p contenteditable="true">2014 - 2018</p>
+                </div>
+              </div>
+            </div>
+            <button id="addEducationBtn" onclick="addEducation()"
+              class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+              Add Education
+            </button>
+          
+<script>
+  function addEducation() {
+      const educationContainer = document.getElementById('educationSection');
+
+      // Create a new education entry
+      const newEducationEntry = document.createElement('div');
+      newEducationEntry.className = 'flex mb-4 education-entry';
+
+      newEducationEntry.innerHTML = `
+     <div id="educationSection">
+              <div class="mb-4 education-entry">
+                <div class="w-full">
+                  <p contenteditable="true" class="font-bold">University of Ilorin</p>
+                  <p contenteditable="true">Bachelor of Science</p>
+                  <p contenteditable="true">2014 - 2018</p>
+                </div>
+                <button id="deleteEducationBtn" class=" ml-2 text-red-500" onclick="removeEducation(this)" >Remove</button>
+              </div>
+            </div>
+  `;
+
+      // Append the new education entry to the container
+      educationContainer.appendChild(newEducationEntry);
+    }
+
+    function removeEducation(button) {
+      const educationEntry = button.parentNode;
+      educationEntry.parentNode.removeChild(educationEntry);
+    }
+
+</script>
+          
         </div>
         <div>
           <h4 id="nameBg3" class="border-b border-yellow-400" contenteditable="true">
@@ -253,81 +281,118 @@
           <h3 class="text-xl font-bold mt-4 border-b border-black mb-4 py-2">
             Work Experience
           </h3>
-          <div contenteditable="true">
-            <div class="flex mb-4">
-              <p class="w-1/4">
-                <span id="workFrom1" contenteditable="true">2012</span><span>-</span
-                ><span id="workTo1" contenteditable="true">2014</span>
-              </p>
-              <div class="w-3/4">
-                <p id="copanyText1" class="text-lg" contenteditable="true">Vijan Designs</p>
-                <p id="roleText1" class="font-bold" contenteditable="true">
-                  Freelance Fashion Illustrator
-                </p>
-                <p></p>
-                <p id="jobDescription1" contenteditable="true">
-                  Working with various clients, including fashion designers, boutique owners, and fashion magazines, to
-                  create custom illustrations for their projects.
-                  Participating in fashion events and exhibitions
-                </p>
+         
+              <div id="workExperienceSection">
+                <!-- Example Work Experience Section -->
+                <div class="flex mb-4 work-experience">
+                  <p class="w-1/4">
+                    <span contenteditable="true">2012</span><span>-</span><span contenteditable="true">2014</span>
+                  </p>
+                  <div class="w-3/4">
+                    <p class="text-lg" contenteditable="true">Vijan Designs</p>
+                    <p class="font-bold" contenteditable="true">
+                      Freelance Fashion Illustrator
+                    </p>
+                    <p contenteditable="true">
+                      Working with various clients, including fashion designers, boutique owners, and fashion magazines, to create
+                      custom illustrations for their projects.
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="flex mb-4">
-              <p class="w-1/4">
-                <span id="workFrom2" contenteditable="true">2012</span><span>-</span
-                ><span id="workTo2" contenteditable="true">2014</span>
-              </p>
-              <div class="w-3/4">
-                <p id="copanyText2" class="text-lg" contenteditable="true">Vijan Designs</p>
-                <p id="roleText2" class="font-bold" contenteditable="true">
-                  Freelance Fashion Illustrator
-                </p>
-                <p></p>
-                <p id="jobDescription2" contenteditable="true">
-                  Working with various clients, including fashion designers, boutique owners, and fashion magazines, to
-                  create custom illustrations for their projects.
-                  Participating in fashion events and exhibitions
-                </p>
+              <button id="addExperienceBtn" onclick="addWorkExperience()"
+                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                Add Work Experience
+              </button>
+            
+<script>
+  function addWorkExperience() {
+      const workExperienceContainer = document.getElementById('workExperienceSection');
+
+      // Create a new work experience section
+      const newSection = document.createElement('div');
+      newSection.className = 'flex mb-4 work-experience';
+
+      newSection.innerHTML = `
+    <div id="workExperienceSection">
+                <!-- Example Work Experience Section -->
+                <div class="flex mb-4 work-experience">
+                  <p class="w-1/4">
+                    <span contenteditable="true">2012</span><span>-</span><span contenteditable="true">2014</span>
+                  </p>
+                  <div class="w-3/4">
+                    <p class="text-lg" contenteditable="true">Vijan Designs</p>
+                    <p class="font-bold" contenteditable="true">
+                      Freelance Fashion Illustrator
+                    </p>
+                    <p contenteditable="true">
+                      Working with various clients, including fashion designers, boutique owners, and fashion magazines, to create
+                      custom illustrations for their projects.
+                    </p>
+                  </div>
+                  <button  onclick="removeWorkExperience(this)" class="ml-2 text-red-500">Remove</button>
+                </div>
               </div>
-            </div>
-            <div class="flex mb-4">
-              <p class="w-1/4">
-                <span id="workFrom3" contenteditable="true">2012</span><span>-</span
-                ><span id="workTo3" contenteditable="true">2014</span>
-              </p>
-              <div class="w-3/4">
-                <p id="copanyText3" class="text-lg" contenteditable="true">Vijan Designs</p>
-                <p id="roleText3" class="font-bold" contenteditable="true">
-                  Freelance Fashion Illustrator
-                </p>
-                <p></p>
-                <p id="jobDescription3" contenteditable="true">
-                  Working with various clients, including fashion designers, boutique owners, and fashion magazines, to
-                  create custom illustrations for their projects.
-                  Participating in fashion events and exhibitions
-                </p>
+  `;
+
+      // Append the new section to the container
+      workExperienceContainer.appendChild(newSection);
+    }
+
+    function removeWorkExperience(button) {
+      const section = button.parentNode;
+      section.parentNode.removeChild(section);
+    }
+
+</script>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mt-4 border-b border-black mb-4 py-2">
+              Skill Set
+            </h3>
+            <div id="skillSetContainer" class="ml-10 mr-5">
+              <div id="skillSetSection">
+                <!-- Example Skill Set -->
+                <div class="flex mb-4 skill-set">
+                  <p contenteditable="true" class="w-3/4">
+                    Fashion Illustration
+                  </p>
+                </div>
               </div>
+              <button onclick="addSkillSet()"
+                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                Add Skill
+              </button>
             </div>
+            <script>
+              function addSkillSet() {
+                const skillSetContainer = document.getElementById('skillSetSection');
+
+                // Create a new skill set entry
+                const newSkillSet = document.createElement('div');
+                newSkillSet.className = 'flex mb-4 skill-set';
+
+                newSkillSet.innerHTML = `
+              <p contenteditable="true" class="w-3/4">
+                New Skill
+              </p>
+              <button onclick="removeSkillSet(this)" class="ml-2 text-red-500">Remove</button>
+            `;
+
+                // Append the new skill set entry to the container
+                skillSetContainer.appendChild(newSkillSet);
+              }
+
+              function removeSkillSet(button) {
+                const skillSet = button.parentNode;
+                skillSet.parentNode.removeChild(skillSet);
+              }
+
+            </script>
           </div>
         </div>
 
-        <div>
-          <h3 class="text-xl font-bold mt-4 border-b border-black mb-4 py-2">
-            Skill Set
-          </h3>
-          <div class="flex">
-            <div class="w-1/2">
-              <p id="skill1" contenteditable="true">Photoshop</p>
-              <p id="skill2" contenteditable="true">Photoshop</p>
-              <p id="skill3" contenteditable="true">Photoshop</p>
-            </div>
-            <div class="w-1/2">
-              <p id="skill4" contenteditable="true">Photoshop</p>
-              <p id="skill5" contenteditable="true">Photoshop</p>
-              <p id="skill6" contenteditable="true">Photoshop</p>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   </div>
